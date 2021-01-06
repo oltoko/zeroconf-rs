@@ -24,7 +24,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Prepare
-      run: sudo apt -y install libavahi-client3 libavahi-client-dev
+      run: "sudo apt -y install libavahi-client-dev && sudo systemctl start avahi-daemon.service"
     - name: Build
       run: cargo build --verbose
     - name: Run tests
